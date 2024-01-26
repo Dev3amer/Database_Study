@@ -1,0 +1,55 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+Table Persons{
+  Person_ID integer [pk, increment] 
+  Name nvarchar(50) 
+  Address nvarchar(50)
+  Contact_Info nvarchar(50)
+}
+Table Members{
+  Member_ID integer [pk, increment] 
+  EmergancyContact nvarchar(50)
+  IsActive bool 
+  Person_ID integer [ref: - Persons.Person_ID]
+}
+Table subscription_Periods{
+  Period_ID integer [pk, increment] 
+  StartDate Date
+  EndDate Date
+  Fees money
+  IsPaid bool
+  Member_ID integer [ref: > Members.Member_ID]
+  Payment_ID integer [ref: - Payments.Payment_ID]
+}
+Table instructors{
+  instructor_ID integer [pk, increment] 
+  Qualifications nvarchar(50)
+  Person_ID integer [ref: - Persons.Person_ID]
+}
+Table Train{
+  Training_ID integer [pk, increment]
+  instructor_ID integer [ref: > instructors.instructor_ID]
+  Member_ID integer [ref: > Members.Member_ID]
+  StartDate Date
+}
+Table Tests{
+  Test_ID integer [pk, increment]
+  Test_Date Date 
+  Results varchar(50)
+  Belt_ID integer [ref: > Belt_Ranks.Belt_ID]
+  Member_ID integer [ref: > Members.Member_ID]
+  instructor_ID integer [ref: > instructors.instructor_ID]
+  Payment_ID integer [ref: - Payments.Payment_ID]
+}
+Table Belt_Ranks{
+  Belt_ID integer [pk, increment]
+  Belt_Name varchar(50)
+  Test_Fees money
+}
+Table Payments{
+  Payment_ID integer [pk, increment]
+  amount money
+  Payment_Date Date
+  Status Varchar(50)
+  Member_ID integer [ref: > Members.Member_ID]
+}

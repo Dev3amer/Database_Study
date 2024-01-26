@@ -1,0 +1,60 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table Patients{
+  Patient_ID integer pk
+  Person_ID integer [ref: - Persons.Person_ID]
+}
+
+Table Doctors{
+  Doctor_ID integer pk
+  specalization varchar32
+  Person_ID integer [ref: - Persons.Person_ID]
+}
+
+Table Appointments{
+  Appointment_ID integer pk
+  Date_Time Date_Time
+  Doctor_ID integer [ref: > Doctors.Doctor_ID]
+  Patient_ID integer [ref: > Patients.Patient_ID]
+  Record_ID integer [ref: - Medical_Records.Record_ID]
+  Payment_ID integer [ref: - Payments.Payment_ID]
+  Status_ID integer [ref: - Status.Status_ID]
+}
+
+Table Persons{
+  Person_ID integer pk
+  FName varchar32
+  LName varchar32
+  Address varchar50
+  Birthdate Date
+  Gender varchar32
+  Phone varchar32
+}
+Table Medical_Records{
+  Record_ID integer pk
+  Description varchar100
+  Diagnosis varchar100
+  Notes varchar100
+  Prescription_ID integer [ref: - Prescriptions.Prescription_ID]
+}
+Table Prescriptions{
+  Prescription_ID integer pk
+  Medication_Name varchar100
+  dosage varchar100
+  frequency varchar100
+  Start_Date Date
+  Enbd_Date Date
+  Instructions varchar100
+}
+Table Payments{
+  Payment_ID integer pk
+  Payment_Date Date
+  Method varchar50
+  Amount Money
+  Notes varchar100
+}
+Table Status{
+  Status_ID integer pk
+  Status_Name varchar32
+}

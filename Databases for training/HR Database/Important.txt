@@ -1,0 +1,5 @@
+-This Data Include About 1000 Record
+-There is Three Table (Employees, Departments, Countries)
+-You Can Restore it by MS Server SQL
+-you Can See The Database Digram After Run This Query "use HR_Database; EXEC sp_changedbowner 'sa';"
+-This data is great to learn SQL Queries on it 

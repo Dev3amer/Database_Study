@@ -1,0 +1,49 @@
+//// Docs: https://dbml.dbdiagram.io/docs
+
+table Books{
+  Book_ID integer [pk, increment]
+  Title nvarchar(255) 
+  ISBN integer
+  Author nvarchar(50)
+  genre nvarchar(50) 
+  details nvarchar(Max) 
+  Publication_Date Date 
+}
+table Copies{
+  Copy_ID integer [pk, increment]
+  Book_ID integer [ref: > Books.Book_ID]
+  Availability_Status bit
+}
+table Users{
+  User_ID integer [pk, increment]
+  Library_Card nvarchar(225)
+  FName nvarchar(50) 
+  LName nvarchar(50) 
+  Contact_Info nvarchar(50) 
+}
+table BorrowingRecords{
+  Record_ID integer [pk, increment]
+  User_ID integer [ref: > Users.User_ID]
+  Copy_ID integer [ref: > Copies.Copy_ID]
+  Borrowing_Date Date
+  Due_Date Date
+  ActualReturnDate Date
+}
+table Fines{
+  Fine_ID integer [pk, increment]
+  Fine_Amount Money
+  User_ID integer [ref: > Users.User_ID]
+  Record_ID integer [ref: - BorrowingRecords.Record_ID]
+  NumberOfLateDays integer
+  Payment_Status bit
+}
+table Reservations{
+  Reservations_ID integer [pk, increment]
+  ReservationDate Date
+  User_ID integer [ref: > Users.User_ID]
+  Copy_ID integer [ref: > Copies.Copy_ID]
+}
+table Settings{
+  DefualtBorrrowDays integer
+  DefaultFinePerDay integer
+}
