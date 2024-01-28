@@ -1,7 +1,7 @@
-Problem 22: Get percentage of vehicles that has no doors specified
+--Problem 22: Get percentage of vehicles that has no doors specified
 
 
-Solution:
+--Solution:
 	SELECT( 
 	((SELECT COUNT(*) FROM VehicleDetails
 	WHERE NumDoors IS NULL) * 1.0)

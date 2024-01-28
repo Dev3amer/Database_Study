@@ -1,8 +1,8 @@
-Problem 13: Get all Makes/Count Of Vehicles that manufactures more than 20K Vehicles
+--Problem 13: Get all Makes/Count Of Vehicles that manufactures more than 20K Vehicles
 
 
 
-Solution:
+--Solution:
 	SELECT	Makes.Make ,COUNT(VehicleDetails.MakeID) AS 'NumberOfVehicles'
 	FROM VehicleDetails
 	JOIN Makes

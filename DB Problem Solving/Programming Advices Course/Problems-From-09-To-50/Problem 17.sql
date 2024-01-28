@@ -1,8 +1,8 @@
-Problem 17: Get total Makes that Mantufactures DriveTypeName=FWD
+--Problem 17: Get total Makes that Mantufactures DriveTypeName=FWD
 
 
 
-Solution:
+--Solution:
 	SELECT count(DISTINCT Makes.Make)
 	FROM VehicleDetails
 	JOIN Makes
@@ -12,7 +12,7 @@ Solution:
 	WHERE DriveTypes.DriveTypeName='FWD';
 
 
-Instructor Solution:
+--Instructor Solution:
 	select count(*) MakeWithFWD from (
 		SELECT distinct Makes.Make, DriveTypes.DriveTypeName
 		FROM DriveTypes

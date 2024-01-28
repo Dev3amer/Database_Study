@@ -1,7 +1,7 @@
-Problem : Count Vehicles by make and order them by NumberOfVehicles from high to low.
+--Problem : Count Vehicles by make and order them by NumberOfVehicles from high to low.
 
 
-Solution: 
+--Solution: 
 	SELECT Makes.Make , COUNT(VehicleDetails.ID)
 	FROM VehicleDetails
 	JOIN Makes

@@ -1,7 +1,7 @@
-Problem 1: Create Master View
+--Problem 1: Create Master View
 
 
-Solution: 
+--Solution: 
 	CREATE VIEW VehicleMasterDetails as
 	SELECT V.ID, V.MakeID, Makes.Make, V.ModelID , MakeModels.ModelName, V.SubModelID, 
 	SubModels.SubModelName, V.BodyID, Bodies.BodyName,

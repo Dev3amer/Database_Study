@@ -1,7 +1,7 @@
- Problem 11: Get Total Makes that runs with GAS
+--Problem 11: Get Total Makes that runs with GAS
 
 
-Solution:
+--Solution:
 	SELECT COUNT(DISTINCT Makes.Make) AS 'TotalGASMakes'
 	FROM VehicleDetails
 	JOIN Makes

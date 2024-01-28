@@ -1,7 +1,7 @@
-Problem 5 : Get All Makes that have manufactured more than 12000 Vehicles in years 1950 to 2000
+--Problem 5 : Get All Makes that have manufactured more than 12000 Vehicles in years 1950 to 2000
 
 
-Solution (01) Best Solution:
+--Solution (01) Best Solution:
 
 	SELECT Makes.Make ,COUNT(*) AS 'NumberOFVehicle' 
 	FROM VehicleDetails
@@ -12,7 +12,7 @@ Solution (01) Best Solution:
 	HAVING COUNT(*) > 12000
 	ORDER BY COUNT(*) DESC; 
 
-Solution (02) Another One Without HAVING:
+--Solution (02) Another One Without HAVING:
 	SELECT * FROM ( 
 		SELECT Makes.Make ,COUNT(*) AS 'NumberOFVehicle' 
 		FROM VehicleDetails

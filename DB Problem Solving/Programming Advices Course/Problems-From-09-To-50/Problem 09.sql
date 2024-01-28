@@ -1,7 +1,7 @@
-Problem 9: Get all vehicles that runs with GAS
+--Problem 9: Get all vehicles that runs with GAS
 
 
-Solution:
+--Solution:
 	SELECT VehicleDetails.* , FuelTypes.FuelTypeName
 	FROM VehicleDetails
 	JOIN FuelTypes

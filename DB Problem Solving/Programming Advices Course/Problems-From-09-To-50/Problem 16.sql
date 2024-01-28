@@ -1,7 +1,7 @@
-Problem 16: Get all Makes that manufactures DriveTypeName = FWD
+--Problem 16: Get all Makes that manufactures DriveTypeName = FWD
 
 
-Solution:
+--Solution:
 	SELECT DISTINCT Makes.Make, DriveTypes.DriveTypeName
 	FROM VehicleDetails
 	JOIN Makes
