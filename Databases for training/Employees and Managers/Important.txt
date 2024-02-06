@@ -1,0 +1,2 @@
+-This Data contains only one table that represents employees and their managers in the same table.
+-You Can Use it For Self Referential Querie.
